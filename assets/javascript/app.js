@@ -58,15 +58,6 @@ database.ref().on("child_added", function (childSnapshot) {
 
   var firstTrainPretty = moment.unix(firstTrainTime).format("HHmm");
 
-  var newRow = $("<tr>").append(
-    $("<td>").text(trainName),
-    $("<td>").text(destination),
-    $("<td>").text(frequency),
-    $("<td>").text(nextTrain),
-    $("<td>").text(tMinutesTillTrain)
-
-  );
-
   var firstTimeConverted = moment(firstTrainTime, "HH:mm").subtract(1, "years");
   console.log(firstTimeConverted);
 
@@ -81,6 +72,14 @@ database.ref().on("child_added", function (childSnapshot) {
 
   var nextTrain = moment().add(tMinutesTillTrain, "minutes");
   console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));
+  
+  var newRow = $("<tr>").append(
+    $("<td>").text(trainName),
+    $("<td>").text(destination),
+    $("<td>").text(frequency),
+    $("<td>").text(nextTrain),
+    $("<td>").text(tMinutesTillTrain)
 
+  );
   $("#trains > tbody").append(newRow);
 });
