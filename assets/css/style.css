@@ -1,0 +1,14 @@
+#trains th,
+td {
+  display: inline-block;
+  width: 16.575%;
+}
+.jumbotron {
+   background-position-y: 65%;
+   color: orangered;
+   text-align: center;
+}
+body {
+    background-position-x: 60%;
+    background-position-y: 60%;
+}
